@@ -59,9 +59,10 @@ async function updateAuthNavigation(user) {
   const member = user ? await getMember(user.uid).catch(() => null) : null;
   const isAdmin = member?.role === "admin";
   const isMember = Boolean(user) && !isAdmin;
+  if (navAdmin) navAdmin.href = isAdmin ? "admin.html" : "html/admin-login.html";
   setNavVisible(navLogin, !user);
   setNavVisible(navSignup, !user);
-  setNavVisible(navAdmin, !user);
+  setNavVisible(navAdmin, !user || isAdmin);
   setNavVisible(navReservation, !isAdmin);
   setNavVisible(navLogout, isMember);
   setNavVisible(navAdminLogout, isAdmin);

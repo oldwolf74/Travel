@@ -1,8 +1,16 @@
-import { loginAdmin } from "./auth.js";
+import { loginAdmin, watchAuth, getMember } from "./auth.js";
 
 if (location.search) {
   history.replaceState(null, "", location.pathname);
 }
+
+watchAuth(async (user) => {
+  if (!user) return;
+  const member = await getMember(user.uid).catch(() => null);
+  if (member?.role === "admin") {
+    location.href = "../admin.html";
+  }
+});
 
 document.querySelector("#admin-login-form")?.addEventListener("submit", async (event) => {
   event.preventDefault();
