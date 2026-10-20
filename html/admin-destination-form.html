@@ -6,7 +6,7 @@
   <title>여행지 등록/수정</title>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/admin-crud.css">
 </head>
 <body>
 <header class="site-header">
@@ -21,7 +21,7 @@
     </nav>
   </div>
 </header>
-<main class="section"><div class="container"><h1>여행지 등록/수정</h1><p>폼 구현 영역입니다.</p></div></main>
-<footer><div class="container">Travel Booking Starter</div></footer>
+<main class="crud-shell"><div class="container"><div class="crud-heading"><div><p class="eyebrow">DESTINATION EDITOR</p><h1 id="form-title">여행지 등록</h1><p>여행지 카드와 상세 화면에 사용할 정보를 입력하세요.</p></div><a class="btn btn-secondary" href="./admin-destinations.html">목록으로</a></div><section class="crud-card"><form id="destination-form" class="crud-form"><input type="hidden" name="id"><label>여행지명<input name="name" required maxlength="60" placeholder="예: 강릉"></label><label>지역<input name="region" required maxlength="80" placeholder="예: 강원도"></label><label class="full">요약<input name="summary" required maxlength="120" placeholder="카드에 표시할 짧은 설명"></label><label class="full">이미지 URL<input name="imageUrl" type="url" placeholder="https://..."></label><label class="full">상세 설명<textarea name="description" placeholder="여행지 상세 소개"></textarea></label><div class="crud-actions full"><button class="btn" type="submit">저장하기</button><a class="btn btn-secondary" href="./admin-destinations.html">취소</a><span id="form-message" class="crud-message" role="status"></span></div></form></section></div></main>
+<footer><div class="container">Travel Booking Starter</div></footer><script type="module" src="../js/admin-destination-form.js?v=20261021"></script>
 </body>
 </html>

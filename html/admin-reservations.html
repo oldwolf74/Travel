@@ -6,7 +6,7 @@
   <title>예약 관리</title>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/admin-crud.css">
 </head>
 <body>
 <header class="site-header">
@@ -21,7 +21,7 @@
     </nav>
   </div>
 </header>
-<main class="section"><div class="container"><h1>예약 관리</h1><p>예약 목록 구현 영역입니다.</p></div></main>
-<footer><div class="container">Travel Booking Starter</div></footer>
+<main class="crud-shell"><div class="container"><div class="crud-heading"><div><p class="eyebrow">RESERVATIONS</p><h1>예약 관리</h1><p>예약 상태를 확인하고 변경합니다.</p></div><a class="btn btn-secondary" href="../admin.html">대시보드</a></div><section class="crud-card"><p id="crud-message" class="crud-message" role="status"></p><div class="crud-table-wrap"><table class="crud-table"><thead><tr><th>예약자</th><th>숙소</th><th>일정</th><th>인원</th><th>상태</th><th>관리</th></tr></thead><tbody id="reservation-rows"><tr><td colspan="6" class="empty-row">데이터를 불러오는 중입니다.</td></tr></tbody></table></div></section></div></main>
+<footer><div class="container">Travel Booking Starter</div></footer><script type="module" src="../js/admin-reservations.js?v=20261021"></script>
 </body>
 </html>

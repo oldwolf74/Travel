@@ -6,7 +6,7 @@
   <title>숙소 등록/수정</title>
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/admin-crud.css">
 </head>
 <body>
 <header class="site-header">
@@ -21,7 +21,7 @@
     </nav>
   </div>
 </header>
-<main class="section"><div class="container"><h1>숙소 등록/수정</h1><p>폼 구현 영역입니다.</p></div></main>
-<footer><div class="container">Travel Booking Starter</div></footer>
+<main class="crud-shell"><div class="container"><div class="crud-heading"><div><p class="eyebrow">STAY EDITOR</p><h1 id="form-title">숙소 등록</h1><p>숙소 정보와 예약에 사용할 가격·재고를 입력하세요.</p></div><a class="btn btn-secondary" href="./admin-stays.html">목록으로</a></div><section class="crud-card"><form id="stay-form" class="crud-form"><input type="hidden" name="id"><label>숙소명<input name="name" required maxlength="80" placeholder="예: 바다빛 호텔"></label><label>여행지 ID<input name="destinationId" required placeholder="예: gangneung"></label><label>주소<input name="address" required maxlength="160" placeholder="숙소 주소"></label><label>1박 가격<input name="pricePerNight" type="number" min="0" required placeholder="120000"></label><label>객실 재고<input name="availableRooms" type="number" min="0" required placeholder="10"></label><label>이미지 URL<input name="imageUrl" type="url" placeholder="https://..."></label><label class="full">소개<textarea name="description" placeholder="숙소 상세 소개"></textarea></label><div class="crud-actions full"><button class="btn" type="submit">저장하기</button><a class="btn btn-secondary" href="./admin-stays.html">취소</a><span id="form-message" class="crud-message" role="status"></span></div></form></section></div></main>
+<footer><div class="container">Travel Booking Starter</div></footer><script type="module" src="../js/admin-stay-form.js?v=20261021"></script>
 </body>
 </html>
