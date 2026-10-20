@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>로그인</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html">Travel Booking</a>
+    <nav class="nav-links">
+      <a href="../index.html">홈</a>
+      <a href="../html/destinations.html">여행지</a>
+      <a href="../html/stays.html">숙소</a>
+      <a href="../html/mypage.html">마이페이지</a>
+      <a href="../html/login.html">로그인</a>
+    </nav>
+  </div>
+</header>
+<main class="section"><div class="container"><h1>로그인</h1><form id="login-form">
+<div class="form-group"><label>이메일</label><input type="email" name="email" required></div>
+<div class="form-group"><label>비밀번호</label><input type="password" name="password" required></div>
+<button class="btn" type="submit">로그인</button>
+</form><p><a href="./signup.html">회원가입</a></p></div></main>
+<script type="module">
+import { loginMember } from "../js/auth.js";
+document.querySelector("#login-form").addEventListener("submit",async e=>{
+ e.preventDefault(); const f=new FormData(e.currentTarget);
+ try{await loginMember(f.get("email"),f.get("password")); alert("로그인 되었습니다."); location.href="../index.html";}
+ catch(err){alert("로그인 실패되었습니다."); console.error(err);}
+});
+</script>
+<footer><div class="container">Travel Booking Starter</div></footer>
+</body>
+</html>

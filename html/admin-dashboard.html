@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>관리자 대시보드</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html">Travel Booking</a>
+    <nav class="nav-links">
+      <a href="../index.html">홈</a>
+      <a href="../html/destinations.html">여행지</a>
+      <a href="../html/stays.html">숙소</a>
+      <a href="../html/mypage.html">마이페이지</a>
+      <a href="../html/login.html">로그인</a>
+    </nav>
+  </div>
+</header>
+<main class="section"><div class="container"><h1>관리자 대시보드</h1><div class="grid"><div class="card"><div class="card-body">회원 수</div></div><div class="card"><div class="card-body">여행지 수</div></div><div class="card"><div class="card-body">숙소 수</div></div><div class="card"><div class="card-body">예약 수</div></div></div></div></main>
+<script type="module">import { requireAdmin } from "../js/admin-common.js"; requireAdmin();</script>
+<footer><div class="container">Travel Booking Starter</div></footer>
+</body>
+</html>

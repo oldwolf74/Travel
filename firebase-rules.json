@@ -1,0 +1,27 @@
+{
+  "rules": {
+    "destinations": {
+      ".read": true,
+      ".write": "auth != null && root.child('members').child(auth.uid).child('role').val() === 'admin'"
+    },
+    "stays": {
+      ".read": true,
+      ".write": "auth != null && root.child('members').child(auth.uid).child('role').val() === 'admin'",
+      ".indexOn": [
+        "destinationId"
+      ]
+    },
+    "members": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || root.child('members').child(auth.uid).child('role').val() === 'admin')",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+    "reservations": {
+      "$reservationId": {
+        ".read": "auth != null && (data.child('memberId').val() === auth.uid || root.child('members').child(auth.uid).child('role').val() === 'admin')",
+        ".write": "auth != null && (!data.exists() && newData.child('memberId').val() === auth.uid || root.child('members').child(auth.uid).child('role').val() === 'admin')"
+      }
+    }
+  }
+}

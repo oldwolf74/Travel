@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>숙소</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html">Travel Booking</a>
+    <nav class="nav-links">
+      <a href="../index.html">홈</a>
+      <a href="../html/destinations.html">여행지</a>
+      <a href="../html/stays.html">숙소</a>
+      <a href="../html/mypage.html">마이페이지</a>
+      <a href="../html/login.html">로그인</a>
+    </nav>
+  </div>
+</header>
+<main class="section"><div class="container"><h1>숙소</h1><div id="list" class="grid"></div></div></main>
+<script type="module">
+import { fetchStays } from "../js/stays.js";
+const list=document.querySelector("#list");
+const data=await fetchStays();
+list.innerHTML=data.map(s=>`<article class="card"><div class="card-body"><h2>${s.name}</h2><p>${s.address||""}</p><p>${Number(s.pricePerNight||0).toLocaleString()}원/박</p><a class="btn" href="./stay-detail.html?id=${s.id}">상세보기</a></div></article>`).join("")||"<p>등록된 숙소가 없습니다.</p>";
+</script>
+<footer><div class="container">Travel Booking Starter</div></footer>
+</body>
+</html>
